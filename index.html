@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>广东高考导向 · 高中物理交互式学习地图</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-copy">
+        <p class="eyebrow">Guangdong Physics Teaching Navigator</p>
+        <h1>广东高考导向 · 高中物理交互式学习地图</h1>
+        <p class="subtitle">点击章节或知识点，快速查看核心概念、重点模型、易错提醒与学习动作。</p>
+      </div>
+      <div class="header-panel" aria-label="学习阶段概览">
+        <span>高一打基础</span>
+        <span>高二建体系</span>
+        <span>高三强迁移</span>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="章节导航">
+        <div class="search-wrap">
+          <label for="searchInput">搜索知识点</label>
+          <input id="searchInput" type="search" placeholder="如：牛顿定律、实验、电磁感应" />
+        </div>
+        <nav id="chapterNav" class="chapter-nav"></nav>
+      </aside>
+
+      <section class="content">
+        <section class="learning-path" aria-label="学习流程">
+          <div class="section-heading">
+            <p>Learning Flow</p>
+            <h2>学习流程</h2>
+          </div>
+          <div id="flowTrack" class="flow-track"></div>
+        </section>
+
+        <section class="textbook-alignment" aria-label="人教版教材章节知识点对应">
+          <div class="section-heading">
+            <p>Textbook Alignment</p>
+          <h2>人教版教材章节知识点对应</h2>
+          </div>
+          <p class="alignment-note">
+            已插入人教版高中物理 PDF，并按“册别-章-节-知识点”建立教材主轴知识库；专题页作为延伸讲解和高考训练入口。
+          </p>
+          <div id="textbookMatrix" class="textbook-matrix"></div>
+        </section>
+
+        <section class="map-layout">
+          <div class="knowledge-column">
+            <div class="section-heading">
+              <p>Knowledge Map</p>
+              <h2>章节知识地图</h2>
+            </div>
+            <div id="knowledgeGrid" class="knowledge-grid"></div>
+          </div>
+
+          <aside class="detail-panel" aria-live="polite">
+            <div class="detail-kicker" id="detailChapter">章节</div>
+            <h2 id="detailTitle">请选择一个知识点</h2>
+            <p id="detailSummary">从左侧章节或中间知识卡片点击任意知识点，这里会展开对应的核心、重点、易错点和训练动作。</p>
+
+            <div class="detail-block">
+              <h3>核心</h3>
+              <p id="detailCore">等待选择。</p>
+            </div>
+            <div class="detail-block">
+              <h3>重点知识点</h3>
+              <ul id="detailKeyPoints"></ul>
+            </div>
+            <div class="detail-block">
+              <h3>易错提醒</h3>
+              <ul id="detailWarnings"></ul>
+            </div>
+            <div class="detail-block">
+              <h3>学习动作</h3>
+              <ul id="detailActions"></ul>
+            </div>
+          </aside>
+        </section>
+      </section>
+    </main>
+
+    <button id="backTop" class="back-top" type="button" aria-label="回到顶部">↑</button>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
